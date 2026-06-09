@@ -1,6 +1,8 @@
 import { Titan_One, Nunito } from "next/font/google";
 import type { Metadata } from "next";
 import Providers from "./providers";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const titanOne = Titan_One({
@@ -28,7 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${titanOne.variable} ${nunito.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
