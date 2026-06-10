@@ -16,19 +16,19 @@
  --muted: #9a8fa0;
 }
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--blush);
   --color-foreground: var(--charcoal);
   --font-titan-one: var(--font-titan-one), cursive, sans-serif;
   --font-nunito: var(--font-nunito), sans-serif;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--charcoal);
     --foreground: var(--blush);
   }
-}
+} */
 
 body {
   background: var(--blush);

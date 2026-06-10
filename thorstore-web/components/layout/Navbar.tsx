@@ -19,7 +19,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[var(--blush)]">
+    <header className="sticky top-0 z-50 bg-[var(--blush)] shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
       <nav className="flex min-h-16 w-full items-center justify-between px-4 py-2 lg:px-6">
         {/* Logo */}
         <Link
