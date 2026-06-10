@@ -46,8 +46,8 @@ const Footer = () => {
               <Image
                 src="/sleepy_panda.png"
                 alt="Sleepy panda logo"
-                width={70}
-                height={70}
+                width={90}
+                height={90}
               />
             </div>
             {/* social media links */}
@@ -64,51 +64,52 @@ const Footer = () => {
                 <Image
                   src="/instagram-fill-svgrepo-com.svg"
                   alt="Instagram"
-                  width={30}
-                  height={30}
+                  width={40}
+                  height={40}
                 />
               </a>
-              <div className="flex gap-4">
-                <a
-                  href="https://www.youtube.com/@thorstore"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--blush)] hover:text-[var(--lavender)]"
-                >
-                  <Image
-                    src="/youtube-fill-svgrepo-com.svg"
-                    alt="YouTube"
-                    width={30}
-                    height={30}
-                  />
-                </a>
-                <a
-                  href="https://www.tiktok.com/@thorstoreart"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--blush)] hover:text-[var(--lavender)]"
-                >
-                  <Image
-                    src="/tiktok-fill-svgrepo-com.svg"
-                    alt="TikTok"
-                    width={30}
-                    height={30}
-                  />
-                </a>
-                <p></p>
-              </div>
+              <a
+                href="https://www.youtube.com/@thorstore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--blush)] hover:text-[var(--lavender)]"
+              >
+                <Image
+                  src="/youtube-fill-svgrepo-com.svg"
+                  alt="YouTube"
+                  width={40}
+                  height={40}
+                />
+              </a>
+              <a
+                href="https://www.tiktok.com/@thorstoreart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--blush)] hover:text-[var(--lavender)]"
+              >
+                <Image
+                  src="/tiktok-fill-svgrepo-com.svg"
+                  alt="TikTok"
+                  width={40}
+                  height={40}
+                />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-2 pt-6 sm:flex-row">
-          <p className="text-xs text-sm text-[var(--blush)]">
-            &copy; {new Date().getFullYear()} Thorstore Art. All rights
-            reserved.
-          </p>
-          <p className="text-xs text-[var(--blush)]">
-            Fan art · Prints · Stickers · Comics ✦
-          </p>
+        <div className="mt-8 w-full">
+          <div className="h-px w-full bg-white/15" />
+
+          <div className="flex flex-col items-center justify-between gap-3 pt-5 text-center sm:flex-row">
+            <p className="text-xs text-[var(--blush)]/90">
+              © {new Date().getFullYear()} Thorstore Art. All rights reserved.
+            </p>
+
+            <p className="text-xs text-[var(--blush)]/90">
+              Fan art · Prints · Stickers · Comics ✦
+            </p>
+          </div>
         </div>
       </div>
       <style jsx>{`
