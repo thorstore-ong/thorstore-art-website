@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Studio / blog section */}
-      <section className="px-6 md:px-10 py-8 bg-white border-t border-[var(--pink-border)]">
+      <section className="px-6 md:px-10 py-8 bg-gradient-to-b from-white to-[var(--blush)] border-t border-[var(--pink-border)]">
         <h2 className="font-titan text-2xl text-[var(--charcoal)] mb-6">
           From the <span className="text-[var(--pink)]">Studio ✦</span>
         </h2>

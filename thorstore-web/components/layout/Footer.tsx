@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <div
-        className="overflow-hidden leading-[0] bg-white"
+        className="overflow-hidden leading-[0] bg-[var(--blush)]"
         style={{ marginBottom: "-2px" }}
       >
         <svg

@@ -17,7 +17,7 @@ export const getCategories = async (): Promise<Category[]> => {
 };
 
 export const getProductsByCategory = async (name: string): Promise<Product[]> => {
-    const response = await api.get<Product[]>(`/api/Categories/${name}/products`);
+    const response = await api.get<Product[]>(`/api/Products/${name}/products`);
     return response.data;
 };
 

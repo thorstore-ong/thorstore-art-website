@@ -34,7 +34,7 @@ const CategoryPills = ({ selected, onSelect }: CategoryPillsProps) => {
           key={cat.id}
           onClick={() => onSelect(cat.name)}
           className={`text-sm font-extrabold px-5 py-2 rounded-full transition-colours ${
-            selected == cat.name
+            selected === cat.name
               ? "bg-[var(--pink)] text-white"
               : "bg-[var(--lavender-light)] text-[#6b5ba0]"
           }`}
