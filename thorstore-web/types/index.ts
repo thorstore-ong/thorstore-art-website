@@ -45,7 +45,7 @@ export interface CreateProductDto {
 // Orders
 export interface OrderItemDto {
     productId: number;
-    quatity: number;
+    quantity: number;
 }
 
 export interface CreateOrderDto {
