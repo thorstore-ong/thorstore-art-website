@@ -83,7 +83,7 @@ export interface CartItem {
 // Payments
 export interface InitiatePaymentDto {
     orderId: number;
-    succesUrl: string;
+    successUrl: string;
     cancelUrl: string;
 }
 

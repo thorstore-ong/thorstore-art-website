@@ -4,7 +4,7 @@ export default function OrderSuccessPage() {
   return (
     <div className="min-h-screen bg-[var(--blush)] flex items-center justify-center">
       <div className="text-center max-w-sm">
-        <div className="text-6xl mb-4">✦🎉✦</div>
+        <div className="text-6xl mb-4">🎉</div>
         <h1 className="font-titan text-3xl text-[var(--charcoal)] mb-3">
           Order Placed!
         </h1>

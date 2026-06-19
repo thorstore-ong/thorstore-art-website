@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/store/cartStore";
 import { useEffect, useState } from "react";
+import { useAuthStore } from "@/store/authStore";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -12,6 +13,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const [mounted, setMounted] = useState(false);
+
+  const { user, clearAuth } = useAuthStore();
 
   useEffect(() => {
     setMounted(true);
@@ -96,6 +99,26 @@ const Navbar = () => {
               </span>
             )}
           </Link>
+
+          {mounted &&
+            (user ? (
+              <button
+                onClick={() => {
+                  clearAuth();
+                  window.location.href = "/";
+                }}
+                className="hidden md:flex h-10 items-center px-4 rounde-full bg-[var(--pink-light)] text-xs font-extrabold text-[var(--charcoal)] hover:bg-[var(--pink)] hover:text-white tramsitiom-colors"
+              >
+                Log out
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="hidden md:flex h-10 items-center px-4 rounded-full bg-[var(--pink-light)] text-xs font-extrabold text-[var(--charcoal)] hover:bg-[var(--pink)] hover:text-white transition-colors"
+              >
+                Log in
+              </Link>
+            ))}
 
           {/* Hamburger — mobile only */}
           <button

@@ -13,7 +13,7 @@ export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCartStore();
   const { token } = useAuthStore();
 
-  // Structured address fields - joined into one string to match backend
+  // Structured address fields — joined into one string before sending
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [province, setProvince] = useState("");
@@ -25,11 +25,11 @@ export default function CheckoutPage() {
   const subTotal = totalPrice();
   const total = subTotal + SHIPPING_COST;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setError("");
 
-    // Must be logged in to place order
+    // Must be logged in to place an order
     if (!token) {
       router.push("/login?redirect=/checkout");
       return;
@@ -43,8 +43,10 @@ export default function CheckoutPage() {
     setIsSubmitting(true);
 
     try {
+      // Combine the structured fields into one string for the backend
       const shippingAddress = `${street}, ${city}, ${province}, ${postalCode}`;
 
+      // Step 1 — create the order
       const order = await placeOrder({
         shippingAddress,
         items: items.map((item) => ({
@@ -53,13 +55,18 @@ export default function CheckoutPage() {
         })),
       });
 
+      // Step 2 — initiate Yoco payment for that order
       const payment = await initiatePayment({
         orderId: order.id,
-        succesUrl: `${window.location.origin}/order/success`,
+        successUrl: `${window.location.origin}/order/success`,
         cancelUrl: `${window.location.origin}/order/cancel`,
       });
 
+      // Clear the cart now that the order is placed
       clearCart();
+
+      // Step 3 — redirect to Yoco's hosted payment page
+      window.location.href = payment.paymentUrl;
     } catch (err: any) {
       setError(
         err.response?.data ||
