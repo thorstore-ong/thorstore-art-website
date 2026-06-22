@@ -37,12 +37,18 @@ const ProductCard = ({ product }: ProductCardProps) => {
           ) : (
             //Placeholder Image
             <div className="absolute inset-0 flex items-center justify-center test-4xl opacity-30">
-              <Image
-                src="/LOGO.PNG"
-                alt={product.name}
-                fill
-                className="object-cover"
-              />
+              {product.ImageUrl ? (
+                <Image
+                  src={product.ImageUrl}
+                  alt={product.name}
+                  width={500}
+                  height={500}
+                />
+              ) : (
+                <div className="h-64 w-full bg-gray-100 flex items-center justify-center">
+                  No image
+                </div>
+              )}
             </div>
           )}
 

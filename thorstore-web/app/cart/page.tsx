@@ -15,7 +15,7 @@ export default function CartPage() {
   //Empty cart state
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-[var(--blush)] flex items-center justify-center">
+      <div className="min-h-screen bg-[var(--blush)] flex flex-col items justify-center">
         <div className="text-center">
           <div className="text-5xl mb-4">🛒</div>
           <p className="font-titan text-xl text-[var(--charcoal)]">
@@ -29,6 +29,14 @@ export default function CartPage() {
             className="inline-block bg-[var(--pink)] text-white font-extrabold text-sm px-6 py-3 rounded-full hover:bg[#ff3b9a] transition-colors"
           >
             Browse the shop
+          </Link>
+        </div>
+        <div className="text-left px-6 md:px-10 py-10">
+          <Link
+            href="/account/orders"
+            className="text-sm font-extrabold text-[var(--muted)] hover:text-[var(--pink)] transition-colors"
+          >
+            My Orders →
           </Link>
         </div>
       </div>
@@ -164,6 +172,12 @@ export default function CartPage() {
           className="inline-block mt-6 text-sm font-extrabold text-[var(--muted)] hover:text-[var(--pink)] transition-colors"
         >
           ← Continue shopping
+        </Link>
+        <Link
+          href="/account/orders"
+          className="text-sm font-extrabold text-[var(--muted)] hover:text-[var(--pink)] transition-colors"
+        >
+          My Orders →
         </Link>
       </div>
     </div>
