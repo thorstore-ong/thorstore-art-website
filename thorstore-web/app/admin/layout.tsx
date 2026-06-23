@@ -25,7 +25,9 @@ export default function AdminLayout({
     }
   }, [mounted, token, router]);
 
-  if (!mounted || !token || !isAdmin()) return null;
+  if (!mounted) return null;
+
+  if (!token || !isAdmin()) return null;
 
   const tabs = [
     { href: "/admin/products", label: "Products" },
