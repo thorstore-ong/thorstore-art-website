@@ -3,7 +3,8 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getAllOrders, updateOrderStatus } from "@/lib/api/orders";
 import { Order } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAuthStore } from "@/store/authStore";
 
 const STATUSES = ["Pending", "Paid", "Shipped", "Delivered", "Cancelled"];
 
@@ -18,10 +19,17 @@ const statusStyles: Record<string, string> = {
 export default function AdminOrdersPage() {
   const queryClient = useQueryClient();
   const [updatingId, setUpdatingId] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const token = useAuthStore((state) => state.token);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const { data: orders = [], isLoading } = useQuery({
     queryKey: ["admin-orders"],
     queryFn: getAllOrders,
+    enabled: mounted && !!token,
   });
 
   const statusMutation = useMutation({
