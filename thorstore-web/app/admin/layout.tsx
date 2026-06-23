@@ -20,7 +20,8 @@ export default function AdminLayout({
   }, []);
 
   useEffect(() => {
-    if (mounted && (!token || !isAdmin())) {
+    if (!mounted) return;
+    if (!token || !isAdmin()) {
       router.push("/");
     }
   }, [mounted, token, router]);
