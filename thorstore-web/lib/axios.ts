@@ -10,10 +10,14 @@ const api = axios.create({
 // Attach the token to every request if it exists
 api.interceptors.request.use((config) => {
     if (typeof window !== 'undefined') {
-         const token = localStorage.getItem('token');
+       const authStorage = localStorage.getItem('auth-storage');
+       if(authStorage) {
+        const parsed = JSON.parse(authStorage);
+        const token = parsed?.state?.token;
         if (token) {
-            config.headers['Authorization'] = `Bearer ${token}`;
+            config.headers.Authorization = `Bearer ${token}`
         }
+       }
     }
     return config;
 });
