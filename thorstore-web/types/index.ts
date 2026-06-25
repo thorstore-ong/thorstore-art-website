@@ -29,7 +29,7 @@ export interface Product {
     description: string;
     price: number;
     stock: number;
-    ImageUrl: string;
+    imageUrl: string;
     categoryName: string;
 }
 

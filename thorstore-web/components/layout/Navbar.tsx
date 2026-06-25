@@ -22,7 +22,8 @@ const Navbar = () => {
 
   const links = [
     { href: "/shop", label: "Shop" },
-    { href: "/blogs", label: "Blog" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/projects", label: "Projects" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];

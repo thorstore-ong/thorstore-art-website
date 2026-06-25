@@ -17,7 +17,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       productId: product.id,
       name: product.name,
       price: product.price,
-      imageUrl: product.ImageUrl,
+      imageUrl: product.imageUrl,
       quantity: 1,
     });
   };
@@ -27,9 +27,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
       {/* Product Image */}
       <Link href={`/shop/${product.id}`}>
         <div className="relative h-48 bg-gradient-to-br from-var-[var(--pink-light)] to-[var(--lavender-light)]">
-          {product.ImageUrl ? (
+          {product.imageUrl ? (
             <Image
-              src={product.ImageUrl}
+              src={product.imageUrl}
               alt={product.name}
               fill
               className="object-cover"
@@ -37,9 +37,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
           ) : (
             //Placeholder Image
             <div className="absolute inset-0 flex items-center justify-center test-4xl opacity-30">
-              {product.ImageUrl ? (
+              {product.imageUrl ? (
                 <Image
-                  src={product.ImageUrl}
+                  src={product.imageUrl}
                   alt={product.name}
                   width={500}
                   height={500}

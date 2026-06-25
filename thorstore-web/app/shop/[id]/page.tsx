@@ -32,7 +32,7 @@ export default function ProductPage() {
       productId: product.id,
       name: product.name,
       price: product.price,
-      imageUrl: product.ImageUrl,
+      imageUrl: product.imageUrl,
       quantity,
     });
 
@@ -94,9 +94,9 @@ export default function ProductPage() {
         <div className="grid md:grid-cols-2 gap-10">
           {/* Product image */}
           <div className="relative aspect-square bg-gradient-to-br from-[var(--pink-light)] to-[var(--lavender-light)] rounded-2xl border-2 border-[var(--pink-border)] overflow-hidden">
-            {product.ImageUrl ? (
+            {product.imageUrl ? (
               <Image
-                src={product.ImageUrl}
+                src={product.imageUrl}
                 alt={product.name}
                 fill
                 className="object-cover"
