@@ -76,7 +76,7 @@ export default function AdminProductsPage() {
       description: product.description,
       price: product.price,
       stock: product.stock,
-      imageUrl: product.ImageUrl,
+      imageUrl: product.imageUrl,
       categoryId: category?.id ?? 0,
     });
   };
